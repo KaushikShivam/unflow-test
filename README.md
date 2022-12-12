@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Unflow case study
 
-## Getting Started
+Unflow assignment that lets the user:
+- responds to requests for DART train times with the next 2 trains at a selected station
+- allows users to request a list of possible stations (this can be a subset of total possible stations if that's easier)
+- responds to all other requests with "Sorry, I don't know how to answer that"
 
-First, run the development server:
+![Screenshot](screenshot.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## How to setup and run the project
+1. Clone the repo
+2. Install dependencies with `npm install`
+3. Run the project with `npm run dev`
+4. Open the url `http://localhost:3000` in the browser to test the project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## General assumptions
+1. I used the container pattern for the frontend where the index page is responsible for all the orchestration
+2. I used the built-in NextJs API routes to circumvent the CORS issue
+3. Instead of relying on NLU, I went with hardcoded search to keep the project simple. Ex "Show stations"
